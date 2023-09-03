@@ -15,7 +15,7 @@ public class DataSourceService {
     @SneakyThrows
     public String loadCountriesFromFile() {
         //imitating service delays
-//        Thread.sleep(3000);
+//        Thread.sleep(5000);
         return Files.readString(Paths.get(Objects.requireNonNull(getClass().getClassLoader()
                 .getResource(COUNTRIES_FILE_NAME))
                 .toURI()));

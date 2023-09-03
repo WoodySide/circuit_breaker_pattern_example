@@ -15,7 +15,7 @@ public class CircuitBreakerConfiguration {
     public CircuitBreaker timeBasedCircuitBreaker() {
         var circuitBreakerConfig = CircuitBreakerConfig.custom()
                 .slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED)
-                .minimumNumberOfCalls(1)
+                .minimumNumberOfCalls(1) // after 1 successful one, next will change the state to OPEN
                 .slidingWindowSize(10)
                 .waitDurationInOpenState(Duration.ofSeconds(5))
                 .failureRateThreshold(65.0f)

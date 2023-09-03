@@ -12,6 +12,7 @@ public class DataSourceProxy {
     private static final String GET_RESOURCE_URL = "http://localhost:8089/api/v1/resources/";
 
     public String getResource() {
-        return restTemplate.getForObject(GET_RESOURCE_URL, String.class);
+        return restTemplate
+                .getForObject(GET_RESOURCE_URL, String.class);
     }
 }
